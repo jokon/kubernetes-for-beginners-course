@@ -1,24 +1,24 @@
-apiVersion: apps/v1     
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-        name: redis-deployment
-        labels:
-                app: assignment-app
+  name: redis-deployment
+  labels:
+    app: assignment-app
 spec:
-        replicas: 1
-        selector:
-                matchLabels:
-                        name: redis
-                        app: assignement-app
-        template: 
-                metadata:
-                        name: redis-pod
-                        labels:
-                                name: redis
-                                app: assignment-app
-                spec:
-                        containers:
-                                - name: redis
-                                  image: redis
-                                  ports:
-                                          - containerPort: 6379
+  replicas: 1
+  selector:
+    matchLabels:
+      name: redis
+      app: assignment-app
+  template:
+    metadata:
+      name: redis
+      labels:
+        name: redis
+        app: assignment-app
+    spec:
+      containers:
+        - name: redis
+          image: redis
+          ports:
+            - containerPort: 6379
